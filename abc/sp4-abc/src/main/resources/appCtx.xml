@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- dataSource 라는 이름으로 DBCP 객체 생성 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@211.183.7.63:1521:orcl" />
+		<property name="user" value="java21" />
+		<property name="password" value="java21" />
+	</bean>
+
+	<!-- MemberDao 객체를 memberDao 라는 이름으로 생성하면서 위에 dbcp 커넥션을 객체를 주입 -->
+	<bean id="boardDao" class="board.dao.BoardDao">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
+	<!-- QnaDao 객체를 qnaDao 라는 이름으로 생성하면서 위에 dbcp 커넥션을 객체를 주입 -->
+	<!-- 	왜냐면 JdbcTemplate 객체를 생성해서 사용하기 위해서 -->
+	<bean id="QnaDao" class="qna.dao.QnaDao">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
+	<!-- 	트랜젝션 관리 한다. -->
+	<bean id="transactionManager" 
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" /> 
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	<bean id="boardList" class="board.service.BoardListService">
+		<property name="boardDao" ref="boardDao" />
+	</bean>
+	
+	<bean id="boardView" class="board.service.BoardViewService">
+		<property name="boardDao" ref="boardDao" />
+	</bean>
+	
+	<bean id="boardWrite" class="board.service.BoardWriteService">
+		<property name="boardDao" ref="boardDao" />
+	</bean>
+	
+	<bean id="boardUpdate" class="board.service.BoardUpdateService">
+		<property name="boardDao" ref="boardDao" />
+	</bean>
+	
+	
+	<bean id="qnaList" class="qna.service.QnaListService">
+		<property name="qnaDao" ref="qnaDao" />
+	</bean>
+	
+<!-- 	<bean id="boardView" class="board.service.BoardViewService"> -->
+<!-- 		<property name="boardDao" ref="boardDao" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="boardWrite" class="board.service.BoardWriteService"> -->
+<!-- 		<property name="boardDao" ref="boardDao" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="boardUpdate" class="board.service.BoardUpdateService"> -->
+<!-- 		<property name="boardDao" ref="boardDao" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="boardDelete" class="board.service.BoardDeleteService"> -->
+<!-- 		<property name="boardDao" ref="boardDao" /> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="changePwdSvc" class="spring.ChangePasswordService"> -->
+<!-- 		<constructor-arg ref="memberDao" /> -->
+<!-- 	</bean> -->
+
+<!--  	<bean id="memberRegSvc" class="spring.MemberRegisterService"> -->
+<!-- 		<constructor-arg ref="memberDao" /> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="memberPrinter" class="spring.MemberPrinter"> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="listPrinter" class="spring.MemberListPrinter"> -->
+<!-- 		<constructor-arg ref="memberDao" /> -->
+<!-- 		<constructor-arg ref="memberPrinter" /> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="infoPrinter" class="spring.MemberInfoPrinter"> -->
+<!-- 		<property name="memberDao" ref="memberDao" /> -->
+<!-- 		<property name="printer" ref="memberPrinter" /> -->
+<!-- 	</bean> -->
+
+</beans>

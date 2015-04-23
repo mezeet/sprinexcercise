@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>index.do</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>DaoProviderInit</servlet-name>
+    <servlet-class>
+  	 	com.webjjang.common.DaoProviderInit
+  	</servlet-class>
+    <init-param>
+      <param-name>dbms</param-name>
+      <param-value>oracle</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>FrontController</servlet-name>
+    <servlet-class>com.webjjang.controller.FrontController</servlet-class>
+    <init-param>
+      <param-name>configFile</param-name>
+      <param-value>
+      	/WEB-INF/commandURI.properties
+      </param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontController</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 
+  <filter>
+    <filter-name>LoginCheck</filter-name>
+    <filter-class>com.webjjang.filter.LoginCheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginCheck</filter-name>
+    <url-pattern>/board/*</url-pattern>
+  </filter-mapping>
+   -->
+  <listener>
+    <listener-class>com.webjjang.event.SessionEvent</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.webjjang.event.ApplicationEvent</listener-class>
+  </listener>
+</web-app>

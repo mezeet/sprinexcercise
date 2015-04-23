@@ -1,0 +1,65 @@
+# main Uri definition
+/index.do=com.webjjang.main.service.IndexService
+/main/index.do=com.webjjang.main.service.MainIndexService
+
+# common Uri definition
+/common/download.do=com.webjjang.common.FileDownloadService
+/common/fileDelete.do=com.webjjang.common.FileDeleteService
+
+# Member Uri definition
+### login / logout
+/member/login.do=com.webjjang.member.service.MemberLoginService
+/member/loginProcess.do=com.webjjang.member.service.MemberLoginProcessService
+/member/logoutProcess.do=com.webjjang.member.service.MemberLogoutProcessService
+### id / password search
+/member/idPwSearch.do=com.webjjang.member.service.MemberIdPwSearchService
+/member/idSearchProcess.do=com.webjjang.member.service.MemberIdSearchProcessService
+/member/pwSearchProcess.do=com.webjjang.member.service.MemberPwSearchProcessService
+### list - admin only
+/member/list.do=com.webjjang.member.service.MemberListService
+### member join
+/member/clauseAccept.do=com.webjjang.member.service.MemberClauseAcceptService
+/member/write.do=com.webjjang.member.service.MemberWriteService
+/member/writeProcess.do=com.webjjang.member.service.MemberWriteProcessService
+###### check member duplication
+/member/idCheckProcess.do=com.webjjang.member.service.MemberIdCheckProcessService
+/member/post.do=com.webjjang.member.service.MemberPostService
+/member/postProcess.do=com.webjjang.member.service.MemberPostProcessService
+### member information view 
+/member/view.do=com.webjjang.member.service.MemberViewService
+### member information update
+/member/update.do=com.webjjang.member.service.MemberUpdateService
+/member/updateProcess.do=com.webjjang.member.service.MemberUpdateProcessService
+/member/viewFileDelete.do=com.webjjang.member.service.MemberViewFileDeleteService
+### member withdrawal
+/member/withdrawalProcess.do=com.webjjang.member.service.MemberWithdrawalProcessService
+
+# Board Uri definition
+/board/list.do=com.webjjang.board.service.BoardListService
+/board/write.do=com.webjjang.board.service.BoardWriteService
+/board/writeProcess.do=com.webjjang.board.service.BoardWriteProcessService
+/board/view.do=com.webjjang.board.service.BoardViewService
+/board/viewFileDelete.do=com.webjjang.board.service.BoardViewFileDeleteService
+/board/update.do=com.webjjang.board.service.BoardUpdateService
+/board/updateProcess.do=com.webjjang.board.service.BoardUpdateProcessService
+/board/deleteProcess.do=com.webjjang.board.service.BoardDeleteProcessService
+
+# QnA Uri definition
+/qna/list.do=com.webjjang.qna.service.QnaListService
+/qna/write.do=com.webjjang.qna.service.QnaWriteService
+/qna/writeProcess.do=com.webjjang.qna.service.QnaWriteProcessService
+/qna/replyWrite.do=com.webjjang.qna.service.QnaReplyWriteService
+/qna/replyWriteProcess.do=com.webjjang.qna.service.QnaReplyWriteProcessService
+/qna/view.do=com.webjjang.qna.service.QnaViewService
+/qna/update.do=com.webjjang.qna.service.QnaUpdateService
+/qna/updateProcess.do=com.webjjang.qna.service.QnaUpdateProcessService
+/qna/deleteProcess.do=com.webjjang.qna.service.QnaDeleteProcessService
+
+# Notice Uri definition
+/notice/list.do=com.webjjang.notice.service.NoticeListService
+/notice/write.do=com.webjjang.notice.service.NoticeWriteService
+/notice/writeProcess.do=com.webjjang.notice.service.NoticeWriteProcessService
+/notice/view.do=com.webjjang.notice.service.NoticeViewService
+/notice/update.do=com.webjjang.notice.service.NoticeUpdateService
+/notice/updateProcess.do=com.webjjang.notice.service.NoticeUpdateProcessService
+/notice/deleteProcess.do=com.webjjang.notice.service.NoticeDeleteProcessService

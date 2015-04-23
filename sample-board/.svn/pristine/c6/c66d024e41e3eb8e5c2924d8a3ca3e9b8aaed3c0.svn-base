@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+.dataTr{
+	background : #eee;
+}
+
+.dataTr:hover{
+	background : #ccc;
+	cursor : pointer;
+}
+
+.title{
+	width : 50%;
+}
+
+.writer{
+	width : 15%;
+}
+
+.wdate{
+	width : 20%;
+}
+
+#goods .goodsList{
+	width : 740px;
+/* 	border: 1px solid orange; */
+	margin: 0 auto;
+}
+.goodsList>.goodsItem{
+	float:left;
+	margin:5px 3px 1px 3px;
+	width: 18%;
+	border: 1px solid #ddd;
+	padding : 2px;
+	cursor : pointer;
+}
+.goodsList>.goodsItem div{
+	text-align: center;
+}

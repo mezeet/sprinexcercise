@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- dataSource 라는 이름으로 DBCP 객체 생성 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@211.183.7.63:1521:orcl" />
+		<property name="user" value="java21" />
+		<property name="password" value="java21" />
+	</bean>
+	
+	<!-- spring ctx 객체에 ibatis 객체를 생성해서 담아둔다. -->
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<!-- iBatis 의 SqlMapClientFactoryBean 에 필요한 DataSource 객체를 넘겨준다. -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!--  이 sqlMapClient 가 어떻게 작동할지 설정해 놓은 설정 파일의 위치도 넣어준다. -->
+		<property name="configLocation" value="classpath:SqlMapConfig.xml"></property>
+	</bean>
+	
+	<!-- 	iBatis 에서 매핑을 설정한 sqlMapCient.xml 파일의 정보를 받아다가 Dao 에서 사용할 수 있도록 -->
+	<!-- 	SqlMapClient 객체를 주입한다. 관련 세터는 만들지 않아도 되는데... 상속을 받게 하면 이미 있기 때문 -->
+	<bean id="memberDao" class="spring.MemberDao">
+		<property name="sqlMapClient" ref="sqlMapClient"></property>
+	</bean>
+	
+	<bean id="transactionManager" 
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" /> 
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+
+</beans>

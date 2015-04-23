@@ -1,0 +1,159 @@
+@CHARSET "utf-8";
+
+/* 전체 레이아웃 설정 */
+#wrapper{
+	margin: 0 auto;
+	width: 800px;
+	border: 1px solid #ccc;
+	background-color: white;
+	box-shadow:1px 5px 5px #000;
+}
+
+/* 표시되는 전체적인 설정 정하기 */
+body{
+	margin:0px;
+	padding:0px;
+	background-color: #aaa;
+	color : #444;
+	font-size: 11pt;
+}
+
+/* 테이블의 속성 정하기 */
+table{
+	display:table;
+}
+table,h2{
+	margin : 10px auto;
+	width:94%;
+}
+
+/* hearder와 footer와 전체 section의 공통되는 부분 */
+#wrapper>hearder, #wrapper>section, #wrapper>footer{
+/* 	겹치지 않게 처리 */
+	clear: both;
+	margin-top: 0 px;
+}
+
+/* hearder와 footer의 공통되는 부분 */
+#wrapper>header, #wrapper>footer{
+/* 	background-color: #8AE62E; */
+	color:white;
+	font-weight: bold;
+	font-size: 12pt;
+	text-shadow:0px 2px 2px #030;
+}
+
+/* hearder(logo, 전체 menu)에 대한 전체 레이아웃 설정 부분 */
+#wrapper>header{
+	height: 150px;
+	font-size: 14pt;
+	background: -webkit-linear-gradient(#072, #5c5); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#072, #5c5); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#072, #5c5); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#072, #5c5); /* Standard syntax */
+}
+
+/* 전체 menu에 대한 전체 레이아웃 설정 부분 */
+/* */
+#mainMenu{
+	margin:0px;
+	width:auto;
+	height:100px;
+}
+
+#mainMenu ul{
+	list-style: none; 
+	height:40px;
+	padding-top:60px;
+	padding-bottom:5px;
+	margin: 0px;
+}
+
+#mainMenu li {
+	display:inline;
+	float:left;
+	font-size:16px;
+}
+
+#mainMenu a, #mainMenu a:visited {
+	padding: 10px 5px 5px 10px;
+	display: block;
+	text-decoration:none;
+	width: auto; 
+	color:white;
+
+}
+#mainMenu a:hover, #mainMenu a:active, #mainMenu a:focus {
+		text-shadow:0px 2px 2px #000;
+		color:#fe4;
+}
+/* */
+
+/* main content에 해당되는 레이아웃 부분 */
+#wrapper>section{
+	padding: 10px;
+}
+
+/* Hot menu에 대한 전체 레이아웃 설정 부분 */
+/* */
+#mainHotMenu{
+	margin:0px 15px 0px 0px;
+	width:auto;
+	height:25px;
+}
+
+#mainHotMenu ul{
+	list-style: none;
+	height:30px;
+	padding-top:10px;
+	padding-bottom:5px;
+	margin: 0px;
+}
+
+#mainHotMenu li {
+	display:inline;
+	float:right;
+	font-size:12px;
+}
+
+#mainHotMenu a, #mainHotMenu a:visited {
+	padding: 10px 5px 5px 10px;
+	display: block;
+	text-decoration:none;
+	width: auto; 
+	color:white;
+
+}
+#mainHotMenu a:hover, #mainHotMenu a:active, #mainHotMenu a:focus {
+		text-shadow:0px 2px 2px #000;
+		color:#fe4;
+}
+/* */
+
+/* main content에 해당되는 레이아웃 부분 */
+#wrapper>section{
+	padding: 10px;
+}
+
+/* footer(회사 정보, 개발자 정보, 관리자 정보)에 대한 레이아웃 설정 */
+#wrapper>footer{
+	padding: 5px 15px 15px 20px;
+	background: -webkit-linear-gradient(#5c5, #072); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#5c5, #072); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#5c5, #072); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#5c5, #072); /* Standard syntax */
+}
+
+/* block으로 처리해야할 태그 선언 */
+header, section, footer, aside, article, figure {
+	display: block;
+}
+
+/* 말줄입 표시 class 선언 */
+.ellip{
+	float:left;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+	display:block;
+}

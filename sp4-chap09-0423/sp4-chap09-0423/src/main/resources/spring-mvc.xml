@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- 	@Controller -->
+	<!-- 	어노테이션으로 설정한 것을 처리 가능하게 해준다. -->
+	<mvc:annotation-driven />
+
+	<!-- 	webapps/  -->
+	<!-- 	어노테이션 없는 경우에는 위에 주소를 "/" 로 설정 .  -->
+	<!-- 	dispatcherServlet 경로가 / 인경우에 필요한 설정 -->
+	<!-- 	css, js, img 파일 등에 접근하려면 필요한다. -->
+	<mvc:default-servlet-handler />
+
+	<!-- 	jsp 뷰 요청하면 앞에 /WEB-INF/view/ 를 붙여서 요청한다. -->
+	<!-- 	즉, 나는 jsp 파일이름만 넣으면 webapps/WEB-INF/view/이름.jsp 로 조립 -->
+	<mvc:view-resolvers>
+		<mvc:jsp prefix="/WEB-INF/view/" />
+	</mvc:view-resolvers>
+
+</beans>

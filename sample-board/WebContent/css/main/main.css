@@ -1,0 +1,35 @@
+@CHARSET "utf-8";
+
+/* 공지사항 */
+#notice, #qna{
+	width : 47%;
+}
+
+#goods{
+	clear: both;
+	width : 96%
+}
+
+#notice, #qna, #goods{
+	float:left;
+	border-radius:10px 5px;
+}
+
+.mainSection{
+	border : 1px solid #eee;
+	margin : 1%;
+}
+
+#notice h3, #qna h3, #goods h3{
+/* 	background: #cf6; */
+	background: -webkit-linear-gradient(#cf6, #cf6, #cf6, #8d8); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#cf6, #cf6, #cf6, #8d8); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#cf6, #cf6, #cf6, #8d8); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#cf6, #cf6, #cf6, #8d8); /* Standard syntax */
+	width:98%;
+	margin:0px auto;
+	padding:1%;
+	border : 1px solid #aca ;
+	border-radius:10px 5px;
+	box-shadow:1px 2px 2px #aca;
+}

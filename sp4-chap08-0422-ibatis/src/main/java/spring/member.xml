@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<!--  특정 네임스페이스 내에서 작동하는 쿼리와 쿼리의 결과인 rs 의 열, 그리고 dto(vo) 객체를 매핑한다. -->
+<sqlMap namespace="Member">
+
+	<!-- 	listVo 라는 결과를 맵핑하는 정보를 선언한다. -->
+	<resultMap id="listVo" 	class="spring.Member">
+	 <result property="id" 			column="id" />
+	 <result property="name" 		column="name" />
+	 <result property="age" 		column="age" />
+	 <result property="tel" 		column="tel" />
+	 <result property="grade" 	column="grade" />
+	</resultMap>
+
+	
+	<select id="list" resultMap="listVo">
+	 	select id, name, age, tel, grade from member
+	</select>
+	
+	<!-- 	viewVo 라는 결과를 맵핑하는 정보 listVo 를 확장하여 선언한다. 즉, listVo 에 몇 가지를 추가할 수 있다.-->
+	<resultMap id="viewVo" 	class="spring.Member" extends="listVo">
+	 <result property="pw" 			column="pw" />
+	 <result property="regdate" column="regdate" />
+	</resultMap>
+
+	<!-- 외부에서 인자로 받을 때 이것을 처리할 클래스를 지정해준다. -->
+	<select id="view" resultMap="viewVo" parameterClass="java.lang.String">
+		select id, pw, name, age, tel, grade, regdate from member where id = #id#
+	</select>
+	
+	<!-- 	회원가입에 사용될 메서드를 적어주고,  -->
+	<insert id="write" parameterClass="spring.Member">
+		insert into member(id,pw,name,age,tel)
+						values(#id#,#pw#,#name#,#age#,#tel#)
+	</insert>
+	<!-- 	회원정보 수정에 사용될 메서드를 적어주고,  -->
+	<update id="update" parameterClass="spring.Member">
+		update member set name=#name#, age =#age#, tel=#tel#
+					where id=#id# and pw=#pw#
+	</update>
+	<!-- 	회원 삭제에 사용될 메서드를 적어주고,  -->
+	<delete id="delete" parameterClass="spring.Member">
+		delete member where id=#id# and pw=#pw#
+	</delete>
+	
+	
+	
+
+	<select id="count" resultClass="java.lang.Integer">
+		select count(*) from member
+	</select>
+	
+
+	
+	
+	
+</sqlMap>

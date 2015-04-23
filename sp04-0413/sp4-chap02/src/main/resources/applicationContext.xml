@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+  <!-- id는 유일하고 name 은 여러 별명을 넣을 수 있다. 호출은 id 나 name 으로도 가능하다. -->
+	<!-- class 에 지정된 클래스를 싱글톤으로 스프링이 알아서 생성해준다. -->
+	<bean id="greeter" name="gre greA" class="chap02.Greeter">
+		<!-- 속성은 멤버변수를 의미하고, 게터와 세터가 있다고 가정한다. -->
+		<!-- value 를 지정해 줬으니 setFormat 메소드를 찾아서  -->
+		<!-- "%s, 안녕하세요!" 를 집어넣어준다. -->
+		<property name="format" value="%s, 안녕하세요! %s가 인사 합니다." />
+	</bean>
+
+	
+	<bean id="company" class="chap02.Company">
+		<property name="comName"  value="스타벅스" />
+		<property name="comTel"  value="02-848-4811" />
+	</bean>
+	
+</beans>

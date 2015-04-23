@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+.dataTr{
+	background : #eee;
+}
+
+.dataTr:hover{
+	background : #ccc;
+	cursor : pointer;
+}
+
+.no, .target, .writer, .wdate{
+	text-align: center;
+}
+.no, .target{
+	width : 10%;
+}
+
+.writer, .wdate{
+	width : 15%;
+}
+
+.title{
+	width : 50%;
+}
+
+.pageTd{
+	text-align: center;
+}
+
+/* 하단 페이지 표시에 전체 사항 지정*/
+.pageTd a,.pageTd b{
+	padding: 1px 5px 2px 5px;
+/* 	margin:1px; */
+	border: 1px solid #7a7;
+	text-decoration: none;
+	
+}
+
+/* 현재 페이지를 제외한 의 지정 */
+.pageTd a{
+	color: #333;
+	background: #efb;
+}
+.pageTd a:hover{
+	color: white;
+	background: #053;
+}
+
+/* 현재 페이지에 대한 지정 */
+.pageTd b{
+	color: white;
+	background: #5a7;
+	
+}
+
+
