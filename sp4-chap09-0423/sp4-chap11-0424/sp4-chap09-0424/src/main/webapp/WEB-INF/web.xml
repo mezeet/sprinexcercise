@@ -21,8 +21,13 @@
 			<!--	컨텍스트 컬렉션 생성할 때 설정 파일 위치를 서블릿 init 메소드의 파라미터로 넘긴다. -->
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
+				<!--	spring mvc 설정. xml 파일 -->
 				classpath:spring-mvc.xml
+				<!--	bean Controller 객체 생성  -->
 				classpath:spring-controller.xml
+				<!-- board 에서 사용할 객체를 생성 DI 적용파일 -->
+				<!-- 	디스패처가 자동으로 xml 해석해서 객체를 생성해 가지고 있다. -->
+				classpath:spring-board.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>

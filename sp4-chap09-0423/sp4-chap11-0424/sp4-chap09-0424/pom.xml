@@ -7,8 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>sp4-chap09-0424 Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  
-  
+
   <dependencies>
   
   		<!-- 	의존설정 - 서블릿 jsp-api  -->
@@ -31,6 +30,30 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.1.0.RELEASE</version>
 		</dependency>
+		
+		<!-- 스프링 context -->
+		<!--	이건 안함, 왜냐면 웹 mvc 에서 자동으로 컨텍스트 해주기 떄문 -->
+
+		<!-- 스프링 jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+		<!-- dbcp 설정 -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.2.1</version>
+		</dependency>
+		
+		<!-- ORACLE database driver -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
+		</dependency>
+
 		<!-- 	의존설정 - 단위테스트  -->
     <dependency>
       <groupId>junit</groupId>
@@ -55,4 +78,12 @@
 			</plugin>
 		</plugins>
   </build>
+  
+  <repositories>
+    <repository>
+      <id>codelds</id>
+      <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+    </repository>
+  </repositories>
+  
 </project>
