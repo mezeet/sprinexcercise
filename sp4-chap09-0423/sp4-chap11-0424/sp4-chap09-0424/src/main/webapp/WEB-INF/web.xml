@@ -5,7 +5,7 @@
 		http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
 
-	<!--"/모든주소" 형태의 url 요청이 들어오면 dispatcher 라는 서블렛이 실행된다. -->
+<!--"/모든주소" 형태의 url 요청이 들어오면 dispatcher 라는 서블렛이 실행된다. -->
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
@@ -27,7 +27,7 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
+	
 	<!-- 	"/모든주소" 형태로 url 요청이 오면 모두 UTF-8 로 인코딩 해주는 필터 실행-->
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
@@ -45,5 +45,5 @@
 			<param-value>UTF-8</param-value>
 		</init-param>
 	</filter>
-
+	
 </web-app>

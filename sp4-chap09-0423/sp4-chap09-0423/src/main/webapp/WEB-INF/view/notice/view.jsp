@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>보드에 목록 페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
-	보드에 목록 페이지 : ${title} 
+    글번호 ${no} 의 글 보기입니다.
 </body>
 </html>

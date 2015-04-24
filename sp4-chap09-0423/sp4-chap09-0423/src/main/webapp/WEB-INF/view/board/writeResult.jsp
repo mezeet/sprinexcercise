@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>보드에 목록 페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
-	보드에 목록 페이지 : ${title} 
+	 제   목 : ${board.title}<br />
+	 내   용 : ${board.content}<br />
+	 작성자 : ${board.writer}<br /> 
+
 </body>
 </html>
