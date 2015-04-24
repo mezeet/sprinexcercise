@@ -2,14 +2,16 @@ package board;
 
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class FreeBoardDao {
 
 	private JdbcTemplate jdbcTemplate;
 	
-	public void setJbcTemplcate(JdbcTemplate jdbcTemplate){
-		this.jdbcTemplate = jdbcTemplate;
+	public void setJbcTemplcate(DataSource dataSource){
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
 	public FreeBoard view(int no){

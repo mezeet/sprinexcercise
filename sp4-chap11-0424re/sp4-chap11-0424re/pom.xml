@@ -2,12 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>sp4</groupId>
-  <artifactId>sp4-chap09-0424</artifactId>
+  <artifactId>sp4-chap11-0424re</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>sp4-chap09-0424 Maven Webapp</name>
+  <name>sp4-chap11-0424re Maven Webapp</name>
   <url>http://maven.apache.org</url>
-
   <dependencies>
   
   		<!-- 	의존설정 - 서블릿 jsp-api  -->
@@ -17,6 +16,7 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<!-- 	의존설정 - 서블릿 api  -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -24,6 +24,7 @@
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<!-- 	의존설정 - 스프링 웹mvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -40,6 +41,7 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>4.1.0.RELEASE</version>
 		</dependency>
+		
 		<!-- dbcp 설정 -->
 		<dependency>
 			<groupId>com.mchange</groupId>
@@ -63,6 +65,7 @@
     </dependency>
     
   </dependencies>
+  
   <build>
     <plugins>
     		<!-- 	빌드 시 메이븐 컴파일러 플러그 인을 사용 -->

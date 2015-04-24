@@ -27,19 +27,12 @@
 		<property name="jdbcTemplate" ref="dataSource" />
 	</bean>
 	
-	<bean id="boardView" class="board.FreeViewService">
+	<bean id="freeViewService" class="board.service.FreeViewService">
 		<property name="freeBoardDao" ref="freeBoardDao" />
 	</bean>
 	
 	<bean id="freeController" class="board.FreeController">
-		<property name="boardView" ref="boardView" />
+		<property name="freeViewService" ref="freeViewService" />
 	</bean>
-	
-	
-	
-	
-
-	
-	
 	
 </beans>

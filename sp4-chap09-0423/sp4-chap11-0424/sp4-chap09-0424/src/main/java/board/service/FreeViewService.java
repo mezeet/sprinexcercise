@@ -3,7 +3,7 @@ package board.service;
 import board.FreeBoard;
 import board.FreeBoardDao;
 
-public class BoarViewService {
+public class FreeViewService {
 	
 	private FreeBoardDao freeBoardDao;
 	
